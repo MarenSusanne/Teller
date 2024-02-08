@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #teller {
+            border: solid black 1px;
+            text-align: center;
+            font-size: xx-large;
+            padding-top: 5%;
+        }
+        button {
+            font-size: large;
+        }
+        #content {
+            display: grid;
+            grid-template-columns: repeat(2, 50px);
+            grid-template-rows: repeat(2, 50px);
+            grid-template-areas:
+            "area1 area1"
+            "area2 area3"
+            ;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 5%;
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        <div style="grid-area: area1;" id="teller">0</div>
+        <button style="grid-area: area2;" id="opp" onclick="addone()">+1</button>
+        <button style="grid-area: area3;" id="ned" onclick="subone()">-1</button>
+    </div>
+
+    <script>
+        let counter = 0
+        function addone() {
+        counter++;
+        document.getElementById('teller').innerHTML = counter;
+       }
+
+       function subone() {
+        counter--;
+        document.getElementById('teller').innerHTML = counter;
+       }
+
+    </script>
+</body>
+</html>
